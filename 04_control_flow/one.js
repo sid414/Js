@@ -62,3 +62,5 @@ if (userLoggedIn && debitCard && 2==3) {
 if (loggedInFromGoogle || loggedInFromEmail) {
     console.log("User logged in");
 }
+
+// It's a data structure that stores information about the active subroutines of a computer program. When a function or subroutine is called, the program pushes information about that call onto the stack.
