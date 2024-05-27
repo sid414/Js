@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+
+</head>
+<body style="background-color: #212121;color:#fff">
+
+    
+</body>
+<script>
+    const div= document.createElement('div')
+    console.log(div);
+    div.className ="main"
+    div.id = Math.round(Math.random()*10 +1);
+    div.setAttribute("title","generated title")
+    div.style.backgroundColor ="green"
+    div.style.padding ="12px"
+    // abhi yeh bs memory ke ander hai ,page ke upar nhi aaya 
+
+
+    // setattribute is more prefered over .innertext as .innerattributes un values ko select krke lata hai pehle n then value ko set krta hai
+    // but set attribute directly lekar aata hai toh ek roundtrip bachata hai
+    // option 1 yeh bhi shi hai
+    // div.innerText ="Chai aur Code"
+// option 2 yeh bhi shi hai
+   const addText= document.createTextNode("char aur code")
+   div.appendChild(addText)
+
+   // finally we attach it in the document
+   document.body.appendChild(div)
+
+
+</script>
+</html>
