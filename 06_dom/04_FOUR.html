@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code </title>
+</head>
+<body style="background-color: black; color:#fff" >
+    <ul class="Language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(langName){
+        const li =document.createElement('li');
+        li.innerHTML=`${langName}`
+        document.querySelector('.Language').appendChild(li); // dikat yeh hai ki pura tree traverse kr rha hai jo ki thik nhi hai coz optimisation issue aajata hai
+
+
+    }
+    addLanguage("python")
+
+        //optimised approach
+    function addOptimisedLanguage(langName){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+         document.querySelector('.Language').appendChild(li);
+    }
+
+    addOptimisedLanguage('golang')
+
+
+    // The key difference is that the addOptimisedLanguage function avoids using innerHTML, which involves HTML parsing and can be slower and less secure compared to creating a text node directly. This can lead to better performance and reduced risk of security vulnerabilities
+
+    //edit
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // // secondLang.innerHTML="mojo"
+    const newli =document.createElement('li')
+    newli.textContent = "mojo"
+    secondLang.replaceWith(newli)
+     
+    // edit
+    const firstLang=document.querySelector("li:nth-child(1)")
+    firstLang.outerHTML="<li>Typescript</li>"
+
+    //remove
+    const lastlanguage =document.querySelector('li:last-child')
+    lastlanguage.remove()
+</script>
+</html>
