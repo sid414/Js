@@ -87,4 +87,30 @@ form.addEventListener('submit', function (e) {
     }
   }
 });
+
+
+```
+```javascript
+
+## Project -3
+
+// const clock = document.querySelector('#clock');
+const clock = document.getElementById('clock');
+
+// both are same use anyone
+
+// let date = new Date()
+// console.log(date.toLocaleTimeString());
+
+// ismein main jitni baar page refresh hoga  updated time aata rhega but we want ki jo yeh date hai voh hr baar run ho n console mein update hota reh
+
+// so for that setinterval methods controls javascript events
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+// ab hr second mein values aai rhengi
 ```
