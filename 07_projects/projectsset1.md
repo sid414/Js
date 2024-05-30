@@ -115,10 +115,11 @@ setInterval(function () {
 }, 1000);
 
 // ab hr second mein values aai rhengi
-```
 
-## Project-4
-```Javascipt
+```
+## Project -3
+
+```javascript
 
 let RandomNumber = parseInt(Math.random() * 10 + 1);
 
@@ -215,4 +216,5 @@ function newGame() {
     PLayGame = true;
   });
 }
+
 ```
