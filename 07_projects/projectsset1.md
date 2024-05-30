@@ -116,3 +116,103 @@ setInterval(function () {
 
 // ab hr second mein values aai rhengi
 ```
+
+## Project-4
+```Javascipt
+
+let RandomNumber = parseInt(Math.random() * 10 + 1);
+
+const Submit = document.querySelector('#subt');
+const UserInput = document.querySelector('#guessField');
+const guessSlot = document.querySelector('.guesses');
+const remaining = document.querySelector('.lastResult');
+const lowOrHi = document.querySelector('.lowOrHi');
+const startOver = document.querySelector('.resultParas');
+
+const p = document.createElement('p');
+
+let prevGuess = [];
+let numGuess = 1;
+
+let PLayGame = true;
+
+if (PLayGame) {
+  // agr game khel pa rhe hai toh submit ke upar sunna padega , toh uske liye hum addeventlistner add krenge , n sbse pehle iske baad function(e) ke ander hum e.preventdefault krenge taki values ko khin mt lekr jao hum denge isse
+
+  Submit.addEventListener('click', function (e) {
+    e.preventDefault();
+    const guess = parseInt(UserInput.value);
+    validateGuess(guess);
+  });
+}
+
+function validateGuess(guess) {
+  if (isNaN(guess)) {
+    alert('PLease Enter a Valid Number');
+  } else if (guess < 1) {
+    alert('PLease Enter a Valid Number more than 1');
+  } else if (guess > 100) {
+    alert('PLease Enter a Valid Number less than 100');
+  } else {
+    prevGuess.push(guess);
+    if (numGuess === 11) {
+      displayGuess(guess);
+      displayMessage(`GAME OVER .Random Number was ${RandomNumber}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
+}
+
+function checkGuess(guess) {
+  // if val is lower or higher r equal
+
+  if (guess === RandomNumber) {
+    displayMessage(`You guessed it right`);
+    endGame();
+  } else if (guess < RandomNumber) {
+    displayMessage(`Number is Too Low`);
+  } else if (guess > RandomNumber) {
+    displayMessage(`Number is Too High`);
+  }
+}
+
+function displayGuess(guess) {
+  UserInput.value = '';
+  guessSlot.innerHTML += `${guess} ,`;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message) {
+  lowOrHi.innerHTML = `<h2>${message}</h2>`;
+}
+
+function endGame() {
+  // PEHLE EK BUTTON BANANA HOGA
+  UserInput.value = '';
+  UserInput.setAttribute('disabled', '');
+  p.classList.add('button');
+  p.innerHTML = `<h2 id="newGame">Start New Game </h2>`;
+  startOver.appendChild(p);
+  PLayGame = false;
+  newGame();
+}
+
+function newGame() {
+  const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click', function (e) {
+    RandomNumber = parseInt(Math.random() * 10 + 1);
+
+    prevGuess = [];
+    numGuess = 1;
+    guessSlot.innerHTML = '';
+    remaining.innerHTML = `${11 - numGuess}`;
+    UserInput.removeAttribute('disabled');
+    startOver.removeChild(p);
+    PLayGame = true;
+  });
+}
+```
