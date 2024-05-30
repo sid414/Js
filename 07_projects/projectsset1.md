@@ -90,9 +90,11 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+## Project -3
+
 ```javascript
 
-## Project -3
+
 
 // const clock = document.querySelector('#clock');
 const clock = document.getElementById('clock');
