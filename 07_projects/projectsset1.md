@@ -6,7 +6,7 @@
 # Solution code
 
 ## project 1
-``` javascript
+```javascript
 console.log("siddharth)
 const buttons = document.querySelectorAll('.button');
 
