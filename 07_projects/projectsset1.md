@@ -40,9 +40,9 @@ buttons.forEach(function (button) {
 });
 
 
-```
 
-##Project -2 solution
+```
+## Project -2 solution
 
 ```Javascript
 
