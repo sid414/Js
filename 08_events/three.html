@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur JS</h1> 
+    <button id ="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+  
+  let intervalId;
+  const SayDate= function(str){
+    console.log(str,Date.now());  // yeh chle hi ja rha hai 
+  }
+//   setInterval(() => {
+//     // console.log("Siddharth",Date.now()); // yeyh chlta hi jayga console mein
+//   }, 1000);
+
+// const intervalid=setInterval(SayDate,1000,"Hi Sid") // set interval mein parameteres bhi pass ho jate haui
+
+document.querySelector('#start').addEventListener('click', function() {
+    if (!intervalId) { // Check if intervalId is not already set
+      intervalId = setInterval(SayDate, 1000, "Hi Sid");
+      console.log("START");
+    }
+  });
+
+  document.querySelector('#stop').addEventListener('click', function() {
+    if (intervalId) { // Check if intervalId is set
+      clearInterval(intervalId);
+      intervalId = null; // Reset intervalId
+      console.log("STOP");
+    }
+  });
+
+// withoput using if and using clearinterval function
+
+//   document.querySelector('#start').addEventListener('click', function() {
+//     clearInterval(intervalId); // Clear any existing interval
+//     intervalId = setInterval(sayDate, 1000, "Hi Sid"); // Start a new interval
+//     console.log("START");
+//   });
+
+//   document.querySelector('#stop').addEventListener('click', function() {
+//     clearInterval(intervalId); // Clear the interval
+//     intervalId = null; // Reset intervalId
+//     console.log("STOP");
+//   });
+</script>
+</html>
