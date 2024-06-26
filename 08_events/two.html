@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // In JavaScript, a function without a name is known as an anonymous function. Anonymous functions are often used as arguments to other functions or assigned to variables.
+    // Anonymous functions are often used in event handling to define the actions to take when an event occurs, without needing to name the function.
+    // settimeout-yeh function/method hai not a part of core js but yeh api ko bhi call krta hai,yeh kehta hai ki itna time do yeh main krke de dunga but uske baad baar baar nhi krunga fir
+    
+    const SaySid=function(){
+        console.log("Siddharth");
+    }
+    const ChangeText=function(){
+        document.querySelector('h1').innerHTML="Best Website"
+    }
+    const ChangeMe=setTimeout(ChangeText,2000)// ab 2 sec baad text change hojyga  // handler hai toh refernce dena hai
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(ChangeMe)
+        console.log("Stopped");  // when click will stop the code from changing
+    })
+    
+    // clearTimeout(ChangeMe) // needs reference aur khega ki call back queue mein jitna bhi timeout rkha hai sb hata do
+
+
+</script>
+</html>
