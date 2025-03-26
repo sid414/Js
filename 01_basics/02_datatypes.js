@@ -16,14 +16,14 @@ let name ="sid"  // string
 let age =18;   // number
 let isLoggedIn =true  // bool fn
 let state;    // undefined
-let numb =null;   //null
+let numb =null;   //null()
 
 // number => 2 to power 53
 // bigint
 // string => ""
 // boolean => true/false
 // null => standalone value (represents empty value)
-// undefined => 
+// undefined => var declare kiya but value defined nhi ki
 // symbol => unique  
 
 // object
